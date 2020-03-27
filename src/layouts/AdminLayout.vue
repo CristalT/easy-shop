@@ -40,6 +40,12 @@ export default {
       drawer: true,
       menuList: [
         {
+          icon: 'shopping_basket',
+          label: 'Órdenes de Compra',
+          to: 'orders',
+          separator: true
+        },
+        {
           icon: 'view_carousel',
           label: 'Carrusel',
           to: 'home-carousel-slides'
