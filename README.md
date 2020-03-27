@@ -1,15 +1,19 @@
-# Bisonte Marroquineria (bisonte)
-## Official Site for Bisonte Marroquineria
+# Easy Shop
+## Simple and customizable e-commerce APP.
 
-Simple E-Shop for multiple purposes. Easely customizable and configurable.
+Simple and lightweight e-commerce application customizable and configurable for multiple little and middle business.
 
 ## Objective
 
-Providing a simple installable and configurable tool for online sales.
+Providing a simple and easy to use application for commerce that business that are looking to sell their products online giving to their customers an extra way to make their buys.
 
-## Payment Methods
+## Hottest Features
 
-- MercadoPago
+- Easy to use
+- PWA integration
+- Fast and reliable
+- No register needed to buy
+- MercadoPago integration
 
 ## Install the dependencies
 ```bash
