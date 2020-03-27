@@ -3,7 +3,6 @@
     <toolbar finder @search="filterProducts">
       <q-btn flat dense label="Nuevo" color="secondary" icon="eva-plus-circle-outline" to="product" />
     </toolbar>
-
     <q-card class="q-ma-sm no-shadow" bordered>
       <q-card-section>
         <q-list v-for="product in filteredProducts" :key="product._id">
