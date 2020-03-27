@@ -19,7 +19,9 @@ const routes = [
       { path: 'products', component: () => import('pages/Admin/Products.vue') },
       { path: 'settings', component: () => import('pages/Admin/Settings.vue') },
       { path: 'home-carousel-slides', component: () => import('pages/Admin/HomeCarouselSlides.vue') },
-      { path: 'slide/:id?', component: () => import('pages/Admin/Slide.vue') }
+      { path: 'slide/:id?', component: () => import('pages/Admin/Slide.vue') },
+      { path: 'orders', component: () => import('pages/Admin/Orders.vue') },
+      { path: 'order/:id', component: () => import('pages/Admin/Order.vue')}
     ]
   }
 ];
