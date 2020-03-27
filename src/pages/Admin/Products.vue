@@ -6,8 +6,8 @@
 
     <q-card class="q-ma-sm no-shadow" bordered>
       <q-card-section>
-        <q-list v-for="(product) in filteredProducts" :key="product._id">
-          <q-item :class="{ 'bg-grey-4': !product.public }" class="q-ma-sm">
+        <q-list v-for="product in filteredProducts" :key="product._id">
+          <q-item clickable :class="{ 'bg-grey-4': !product.public }" class="q-ma-sm">
             <q-item-section avatar>
               <q-avatar>
                 <img :src="uploadsUrl + product.defaultImage" />
