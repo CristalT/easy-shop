@@ -181,7 +181,13 @@
             <q-select label="Forma de Pago" :options="paymentMethods" v-model="paymentMethod" />
           </q-card-section>
           <q-card-section>
-            <q-btn label="Finalizar Compra" :disabled="!paymentMethod" color="accent" class="full-width" />
+            <q-btn
+              label="Finalizar Compra"
+              :disabled="!paymentMethod"
+              color="accent"
+              class="full-width"
+              @click="finishOrder"
+            />
           </q-card-section>
         </q-card>
       </div>
@@ -251,6 +257,19 @@ export default {
         .onOk(() => {
           const index = this.$store.commit('main/deleteFromOrder', id);
         });
+    },
+    finishOrder() {
+      const payload = {
+        payer: this.payer,
+        products: this.products,
+        payment: {
+          method: this.paymentMethod,
+          status: 'PENDING'
+        }
+      };
+      this.$axios.put('order', payload).then(() => {
+        localStorage.setItem('payerData', JSON.stringify(this.payer))
+      });
     }
   },
   computed: {
@@ -268,6 +287,13 @@ export default {
         }, 0),
         2
       );
+    }
+  },
+  created() {
+    const localData = localStorage.getItem('payerData');
+
+    if (localData) {
+      this.payer = JSON.parse(localData)
     }
   }
 };
