@@ -19,10 +19,6 @@ export default {
       this.$store.commit('main/importOrderProducts');
 
       const mp = this.settings.paymentMethods.find(pm => pm.label === 'MercadoPago')
-      
-      if (mp.value) {
-        this.$store.commit('main/setMercadoPagoCredentials', this.settings.mercadoPagoCredentials)
-      }
     }
   }
 };

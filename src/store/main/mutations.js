@@ -32,9 +32,6 @@ export function setSettings(state, settings) {
   state.settings = settings;
 }
 
-export function setMercadoPagoCredentials(state, mpCredentials) {
-  Mercadopago.setPublishableKey(mpCredentials.publicKey);
-}
 
 export function setHomeCarouselSlides(state, slides) {
   state.homeCarouselSlides = Object.values(slides);
