@@ -6,7 +6,8 @@ const routes = [
       { path: '', component: () => import('pages/Index.vue') },
       { path: 'catalog', component: () => import('pages/Catalog/Index.vue') },
       { path: 'product/:id', component: () => import('pages/Catalog/Product.vue') },
-      { path: 'order', component: () => import('pages/Order/Index.vue') }
+      { path: 'order', component: () => import('pages/Order/Index.vue') },
+      { path: 'order/successfully-sended', component: () => import('pages/Order/SuccessfullySended.vue')}
     ]
   },
   {

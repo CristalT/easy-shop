@@ -16,6 +16,8 @@ export default {
       this.$store.dispatch('main/fetchCategories');
       this.$store.dispatch('main/fetchActiveCategories');
 
+      this.$store.commit('main/importOrderProducts');
+
       const mp = this.settings.paymentMethods.find(pm => pm.label === 'MercadoPago')
       
       if (mp.value) {

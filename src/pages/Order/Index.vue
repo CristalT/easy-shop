@@ -267,8 +267,10 @@ export default {
           status: 'PENDING'
         }
       };
-      this.$axios.put('order', payload).then(() => {
-        localStorage.setItem('payerData', JSON.stringify(this.payer))
+      this.$axios.put('order', payload).then(res => {
+        localStorage.setItem('payerData', JSON.stringify(this.payer));
+        localStorage.removeItem('orderProducts');
+        window.location = res.data;
       });
     }
   },
@@ -293,7 +295,7 @@ export default {
     const localData = localStorage.getItem('payerData');
 
     if (localData) {
-      this.payer = JSON.parse(localData)
+      this.payer = JSON.parse(localData);
     }
   }
 };

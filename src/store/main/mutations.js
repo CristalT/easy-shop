@@ -12,6 +12,15 @@ export function setActiveCategories(state, activeCategories) {
 
 export function addProductToOrder(state, product) {
   state.order.products.push(product);
+  localStorage.setItem('orderProducts', JSON.stringify(state.order.products));
+}
+
+export function importOrderProducts(state) {
+  const local = localStorage.getItem('orderProducts');
+
+  if (local) {
+    state.order.products = JSON.parse(local)
+  }
 }
 
 export function deleteFromOrder(state, productId) {
