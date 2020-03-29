@@ -182,12 +182,16 @@
           </q-card-section>
           <q-card-section>
             <q-btn
-              label="Finalizar Compra"
-              :disabled="!paymentMethod"
+              :disabled="!paymentMethod || sending || !total"
               color="accent"
               class="full-width"
               @click="finishOrder"
-            />
+            >
+            <span v-if="!sending">Finalizar Compra</span>
+            <span v-else>
+              <q-spinner-dots />
+            </span>
+            </q-btn>
           </q-card-section>
         </q-card>
       </div>
@@ -201,6 +205,7 @@ import { required, integer, email, requiredIf } from 'vuelidate/lib/validators';
 export default {
   data() {
     return {
+      sending: false,
       paymentMethod: null,
       payer: {
         firstName: '',
@@ -259,6 +264,7 @@ export default {
         });
     },
     finishOrder() {
+      this.sending = true;
       const payload = {
         payer: this.payer,
         products: this.products,
@@ -271,7 +277,11 @@ export default {
         localStorage.setItem('payerData', JSON.stringify(this.payer));
         localStorage.removeItem('orderProducts');
         window.location = res.data;
-      });
+      }).catch(err => {
+        console.error(err)
+        this.notifyError('Ocurrió un error al enviar tu orden de compra. Intentá nuevamente.');
+        this.sending = false;
+      })
     }
   },
   computed: {
