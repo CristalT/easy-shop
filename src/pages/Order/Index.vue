@@ -49,12 +49,24 @@
                   :error="$v.payer.phone.areaCode.$error"
                   @blur="$v.payer.phone.areaCode.$touch"
                   :dense="$q.platform.is.mobile"
+<<<<<<< HEAD
                 />
+=======
+                >
+                <template v-slot:prepend>
+                    <q-icon name="phone" />
+                  </template>
+                </q-input>
+>>>>>>> 7349c49... initial commit
               </div>
               <div class="col-xs-8 col-sm-4">
                 <q-input
                   type="tel"
+<<<<<<< HEAD
                   label="Teléfono"
+=======
+                  label="Número"
+>>>>>>> 7349c49... initial commit
                   v-model="payer.phone.number"
                   :error="$v.payer.phone.number.$error"
                   @blur="$v.payer.phone.number.$touch"
@@ -69,7 +81,15 @@
                   :error="$v.payer.email.$error"
                   @blur="$v.payer.email.$touch"
                   :dense="$q.platform.is.mobile"
+<<<<<<< HEAD
                 ></q-input>
+=======
+                >
+                <template v-slot:prepend>
+                  <q-icon name="alternate_email" />
+                </template>
+                </q-input>
+>>>>>>> 7349c49... initial commit
               </div>
               <div class="col-xs-9 col-sm-8">
                 <q-input
@@ -79,12 +99,24 @@
                   :error="$v.payer.address.streetName.$error"
                   @blur="$v.payer.address.streetName.$touch"
                   :dense="$q.platform.is.mobile"
+<<<<<<< HEAD
                 ></q-input>
+=======
+                >
+                <template v-slot:prepend>
+                  <q-icon name="location_on" />
+                </template>
+                </q-input>
+>>>>>>> 7349c49... initial commit
               </div>
               <div class="col-xs-3 col-sm-2">
                 <q-input
                   type="text"
+<<<<<<< HEAD
                   label="Nro."
+=======
+                  label="Nro. Altura"
+>>>>>>> 7349c49... initial commit
                   v-model="payer.address.streetNumber"
                   :error="$v.payer.address.streetNumber.$error"
                   @blur="$v.payer.address.streetNumber.$touch"
@@ -187,10 +219,17 @@
               class="full-width"
               @click="finishOrder"
             >
+<<<<<<< HEAD
             <span v-if="!sending">Finalizar Compra</span>
             <span v-else>
               <q-spinner-dots />
             </span>
+=======
+              <span v-if="!sending">Finalizar Compra</span>
+              <span v-else>
+                <q-spinner-dots />
+              </span>
+>>>>>>> 7349c49... initial commit
             </q-btn>
           </q-card-section>
         </q-card>
@@ -273,6 +312,7 @@ export default {
           status: 'PENDING'
         }
       };
+<<<<<<< HEAD
       this.$axios.put('order', payload).then(res => {
         localStorage.setItem('payerData', JSON.stringify(this.payer));
         localStorage.removeItem('orderProducts');
@@ -282,6 +322,20 @@ export default {
         this.notifyError('Ocurrió un error al enviar tu orden de compra. Intentá nuevamente.');
         this.sending = false;
       })
+=======
+      this.$axios
+        .put('order', payload)
+        .then(res => {
+          localStorage.setItem('payerData', JSON.stringify(this.payer));
+          localStorage.removeItem('orderProducts');
+          window.location = res.data;
+        })
+        .catch(err => {
+          console.error(err);
+          this.notifyError('Ocurrió un error al enviar tu orden de compra. Intentá nuevamente.');
+          this.sending = false;
+        });
+>>>>>>> 7349c49... initial commit
     }
   },
   computed: {

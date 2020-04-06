@@ -4,15 +4,24 @@
       <q-btn label="Nueva" flat dense @click="addCategory" icon="eva-plus-circle-outline" color="secondary" />
     </toolbar>
 
+<<<<<<< HEAD
     <q-card class="q-ma-sm">
       <q-card-section>
+=======
+    <q-card class="q-ma-sm no-shadow" bordered>
+      <q-card-section v-if="categories.length">
+>>>>>>> 7349c49... initial commit
         <q-list v-for="item in categories" :key="item._id">
           <q-item clickable>
             <q-item-section>
               {{ item.name }}
             </q-item-section>
             <q-item-section side>
+<<<<<<< HEAD
               <q-btn icon="eva-trash-outline" flat round dense color="negative" @click="deleteCategory(item._id)" />
+=======
+              <q-btn icon="eva-trash-outline" flat round dense size="sm" color="negative" @click="deleteCategory(item._id)" />
+>>>>>>> 7349c49... initial commit
             </q-item-section>
             <q-item-section side>
               <q-btn icon="eva-edit-outline" flat round dense color="primary" @click="editCategory(item._id)" />
@@ -20,6 +29,15 @@
           </q-item>
         </q-list>
       </q-card-section>
+<<<<<<< HEAD
+=======
+      <q-card-section v-else>
+        <q-banner class="bg-blue-2 text-blue-10">
+          <q-icon name="eva-info-outline" class="q-mr-md" size="3em" />
+          No se encontraron categorías.
+        </q-banner>
+      </q-card-section>
+>>>>>>> 7349c49... initial commit
     </q-card>
   </q-page>
 </template>
@@ -37,8 +55,13 @@ export default {
   },
   methods: {
     getAllCategories: async function() {
+<<<<<<< HEAD
       const request = await this.$axios('category');
       this.categories = request.data;
+=======
+      const response = await this.$axios('category');
+      this.categories = Object.values(response.data);
+>>>>>>> 7349c49... initial commit
     },
     addCategory() {
       this.$q

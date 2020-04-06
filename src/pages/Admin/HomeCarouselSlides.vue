@@ -3,9 +3,15 @@
     <toolbar>
       <q-btn flat dense label="Nuevo" color="secondary" icon="eva-plus-circle-outline" to="slide" />
     </toolbar>
+<<<<<<< HEAD
     <q-card class="q-ma-sm">
       <q-card-section>
         <q-list v-if="slides.length">
+=======
+    <q-card class="q-ma-sm no-shadow" bordered>
+      <q-card-section v-if="slides.length">
+        <q-list>
+>>>>>>> 7349c49... initial commit
           <q-item clickable v-for="slide in slides" :key="slide._id">
             <q-item-section avatar>
               <q-avatar>
@@ -17,7 +23,11 @@
               <q-item-label caption>{{ wordLimit(slide.text, 4) }}</q-item-label>
             </q-item-section>
             <q-item-section side>
+<<<<<<< HEAD
               <q-btn icon="eva-trash-outline" flat round color="negative" @click="deleteSlide(slide._id)" />
+=======
+              <q-btn icon="eva-trash-outline" flat round color="negative" @click="deleteSlide(slide._id)" size="sm" />
+>>>>>>> 7349c49... initial commit
             </q-item-section>
             <q-item-section side>
               <q-btn icon="eva-edit-outline" flat round color="primary" :to="'slide/' + slide._id" />
@@ -25,10 +35,20 @@
           </q-item>
         </q-list>
       </q-card-section>
+<<<<<<< HEAD
     </q-card>
     <q-banner v-if="!loading && !slides.length" class="bg-yellow-3 text-center">
       No se encontraron slides en su carrusel de inicio.
     </q-banner>
+=======
+      <q-card-section v-if="!loading && !slides.length">
+        <q-banner class="bg-blue-2 text-blue-10">
+          <q-icon name="eva-info-outline" class="q-mr-md" size="3em"/>
+          No se encontraron slides en su carrusel de inicio.
+        </q-banner>
+      </q-card-section>
+    </q-card>
+>>>>>>> 7349c49... initial commit
   </q-page>
 </template>
 

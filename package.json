@@ -1,8 +1,15 @@
 {
+<<<<<<< HEAD
   "name": "bisonte",
   "version": "0.0.1",
   "description": "Official Site of Bisonte Marroquineria",
   "productName": "Bisonte Marroquineria",
+=======
+  "name": "easyshop-ux",
+  "version": "0.1.0",
+  "description": "Easy Shop Frontend",
+  "productName": "EasyShopUX",
+>>>>>>> 7349c49... initial commit
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Marcelo J Forclaz",
@@ -16,7 +23,13 @@
     "axios": "^0.19.2",
     "quasar": "^1.0.0",
     "vue-image-upload-resize": "^2.3.0",
+<<<<<<< HEAD
     "vuelidate": "^0.7.5"
+=======
+    "vuelidate": "^0.7.5",
+    "swiper": "^5.3.6",
+    "vue-awesome-swiper": "^4.1.0"
+>>>>>>> 7349c49... initial commit
   },
   "devDependencies": {
     "@quasar/app": "^1.0.0",

@@ -19,7 +19,11 @@ export function importOrderProducts(state) {
   const local = localStorage.getItem('orderProducts');
 
   if (local) {
+<<<<<<< HEAD
     state.order.products = JSON.parse(local)
+=======
+    state.order.products = JSON.parse(local);
+>>>>>>> 7349c49... initial commit
   }
 }
 
@@ -32,7 +36,30 @@ export function setSettings(state, settings) {
   state.settings = settings;
 }
 
+<<<<<<< HEAD
 
 export function setHomeCarouselSlides(state, slides) {
   state.homeCarouselSlides = Object.values(slides);
 }
+=======
+export function setHomeCarouselSlides(state, slides) {
+  state.homeCarouselSlides = Object.values(slides);
+}
+
+export function setAboutUs(state, data) {
+  state.aboutUs = data;
+}
+
+export function setAdminToken(state, data) {
+  state.adminToken = data;
+  sessionStorage.setItem('adminToken', data);
+}
+
+export function setContactData(state, data) {
+  state.contactData = data;
+}
+
+export function setBrands(state, data) {
+  state.brands = data;
+}
+>>>>>>> 7349c49... initial commit

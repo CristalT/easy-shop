@@ -4,7 +4,11 @@
       <q-btn flat dense label="Nuevo" color="secondary" icon="eva-plus-circle-outline" to="product" />
     </toolbar>
     <q-card class="q-ma-sm no-shadow" bordered>
+<<<<<<< HEAD
       <q-card-section>
+=======
+      <q-card-section v-if="filteredProducts.length">
+>>>>>>> 7349c49... initial commit
         <q-list v-for="product in filteredProducts" :key="product._id">
           <q-item clickable :class="{ 'bg-grey-4': !product.public }" class="q-ma-sm">
             <q-item-section avatar>
@@ -23,7 +27,11 @@
               <q-item-label> $ {{ product.price | numberFormat }} </q-item-label>
             </q-item-section>
             <q-item-section side>
+<<<<<<< HEAD
               <q-btn icon="eva-trash-outline" @click="deleteProduct(product._id)" flat round color="negative" />
+=======
+              <q-btn icon="eva-trash-outline" @click="deleteProduct(product._id)" flat round color="negative" size="sm" />
+>>>>>>> 7349c49... initial commit
             </q-item-section>
             <q-item-section side>
               <q-btn icon="eva-edit-outline" :to="'product/' + product._id" flat round color="primary" />
@@ -31,6 +39,15 @@
           </q-item>
         </q-list>
       </q-card-section>
+<<<<<<< HEAD
+=======
+      <q-card-section v-else>
+         <q-banner class="bg-blue-2 text-blue-10">
+          <q-icon name="eva-info-outline" class="q-mr-md" size="3em" />
+          Sin resultados.
+        </q-banner>
+      </q-card-section>
+>>>>>>> 7349c49... initial commit
     </q-card>
   </q-page>
 </template>

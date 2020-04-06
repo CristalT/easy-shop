@@ -6,6 +6,7 @@
     <div class="q-pa-md">
       <q-card>
         <q-card-section>
+<<<<<<< HEAD
           <div class="sutil-title">Catálogo</div>
           <q-toggle v-model="Settings.catalogOn" label="Catálogo habilitado" />
         </q-card-section>
@@ -27,6 +28,97 @@
             :error="$v.Settings.mercadoPagoCredentials.publicKey.$error"
             @blur="$v.Settings.mercadoPagoCredentials.publicKey.$touch"
           />
+=======
+          <div class="sutil-title filled semi-rounded">Catálogo</div>
+          <div class="row">
+            <div class="col">
+              <q-toggle v-model="Settings.catalogOn" label="Catálogo habilitado" />
+            </div>
+            <div class="col">
+              <q-toggle v-model="Settings.salesOn" :disabled="!Settings.catalogOn" label="Ventas Online habilitadas" />
+            </div>
+          </div>
+          <fieldset>
+            <legend>Medios de Pago</legend>
+            <div v-for="(method, index) of Settings.paymentMethods" :key="index">
+              <q-checkbox v-model="method.value" :label="method.label" />
+            </div>
+          </fieldset>
+        </q-card-section>
+        <q-card-section>
+          <div class="sutil-title filled">Credenciales MercadoPago</div>
+          <div class="row q-col-gutter-sm">
+            <div class="col-xs-12 col-sm-6">
+              <q-input
+                :disabled="!hasMpEnabled"
+                :readonly="!hasMpEnabled"
+                class="q-mx-sm"
+                type="text"
+                v-model="Settings.mercadoPagoCredentials.publicKey"
+                label="Public Key"
+                :error="$v.Settings.mercadoPagoCredentials.publicKey.$error"
+                @blur="$v.Settings.mercadoPagoCredentials.publicKey.$touch"
+              />
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <q-input
+                :disabled="!hasMpEnabled"
+                :readonly="!hasMpEnabled"
+                class="q-mx-sm"
+                type="text"
+                v-model="Settings.mercadoPagoCredentials.accessToken"
+                label="Access Token"
+                :error="$v.Settings.mercadoPagoCredentials.accessToken.$error"
+                @blur="$v.Settings.mercadoPagoCredentials.accessToken.$touch"
+              />
+            </div>
+          </div>
+        </q-card-section>
+        <q-card-section>
+          <div class="sutil-title filled">Mailing</div>
+          <fieldset>
+            <legend>
+              Configuración de Mailjet
+            </legend>
+            <div class="row q-col-gutter-sm">
+              <div class="col-xs-12 col-sm-6">
+                <q-input type="text" label="Public Key" v-model="Settings.mailing.mailjet.publicKey" />
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <q-input type="text" label="Private Key" v-model="Settings.mailing.mailjet.privateKey" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Envíos de Mail</legend>
+            <div class="row q-col-gutter-sm">
+              <div class="col-xs-12 col-sm-6">
+                <q-input class="col" type="email" label="Email Remitente" v-model="Settings.mailing.from.email" />
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <q-input class="col" type="text" label="Nombre Remitente" v-model="Settings.mailing.from.name" />
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <legend>Formulario de Contacto</legend>
+            <div class="row q-col-gutter-sm flex items-center">
+              <div class="col-xs-12 col-sm-6">
+                <q-toggle class="col" label="Mostrar" v-model="Settings.contactForm.enabled" />
+              </div>
+              <div class="col-xs-12 col-sm-6">
+                <q-input
+                  class="col"
+                  type="text"
+                  label="Email Destinatario"
+                  v-model="Settings.contactForm.emailTo"
+                  :error="$v.Settings.contactForm.emailTo.$error"
+                  @blur="$v.Settings.contactForm.emailTo.$touch"
+                />
+              </div>
+            </div>
+          </fieldset>
+>>>>>>> 7349c49... initial commit
         </q-card-section>
       </q-card>
     </div>
@@ -34,7 +126,11 @@
 </template>
 <script>
 import Toolbar from 'src/components/Toolbar';
+<<<<<<< HEAD
 import { requiredIf } from 'vuelidate/lib/validators';
+=======
+import { requiredIf, email } from 'vuelidate/lib/validators';
+>>>>>>> 7349c49... initial commit
 export default {
   name: 'SettingsPage',
   components: {
@@ -45,6 +141,10 @@ export default {
       Settings: {
         _id: 'settings',
         catalogOn: true,
+<<<<<<< HEAD
+=======
+        salesOn: false,
+>>>>>>> 7349c49... initial commit
         paymentMethods: [
           {
             label: 'MercadoPago',
@@ -56,7 +156,26 @@ export default {
           }
         ],
         mercadoPagoCredentials: {
+<<<<<<< HEAD
           publicKey: ''
+=======
+          publicKey: '',
+          accessToken: ''
+        },
+        mailing: {
+          mailjet: {
+            publicKey: '',
+            privateKey: ''
+          },
+          from: {
+            name: '',
+            email: ''
+          }
+        },
+        contactForm: {
+          enabled: false,
+          emailTo: ''
+>>>>>>> 7349c49... initial commit
         }
       }
     };
@@ -68,6 +187,22 @@ export default {
           required: requiredIf(function() {
             return this.hasMpEnabled;
           })
+<<<<<<< HEAD
+=======
+        },
+        accessToken: {
+          required: requiredIf(function() {
+            return this.hasMpEnabled;
+          })
+        }
+      },
+      contactForm: {
+        emailTo: {
+          required: requiredIf(function() {
+            return this.hasContactFormEnabled;
+          }),
+          email
+>>>>>>> 7349c49... initial commit
         }
       }
     }
@@ -89,7 +224,11 @@ export default {
       if (this.$v.Settings.$invalid) {
         return;
       }
+<<<<<<< HEAD
       
+=======
+
+>>>>>>> 7349c49... initial commit
       this.$axios
         .post('settings', this.Settings)
         .then(() => {
@@ -104,6 +243,12 @@ export default {
   computed: {
     hasMpEnabled() {
       return this.Settings.paymentMethods.find(pm => pm.label === 'MercadoPago').value;
+<<<<<<< HEAD
+=======
+    },
+    hasContactFormEnabled() {
+      return this.Settings.contactForm.enabled;
+>>>>>>> 7349c49... initial commit
     }
   },
   created() {

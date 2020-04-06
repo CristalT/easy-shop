@@ -24,3 +24,28 @@ export async function fetchHomeCarouselSlides({ commit }) {
   commit('setHomeCarouselSlides', request.data);
 }
 
+<<<<<<< HEAD
+=======
+/** Get About Us info */
+export async function fetchAboutUs({ commit }) {
+  const request = await axiosInstance('about');
+  commit('setAboutUs', request.data[0]);
+}
+
+
+/** Get Contact Data */
+export async function fetchContactData({ commit }) {
+  const request = await axiosInstance('contact-data');
+  commit('setContactData', request.data);
+}
+
+export async function fetchBrands({ commit }) {
+  const response = await axiosInstance('brands-carousel');
+  let brands = []
+  console.log(response.data)
+  if (response.data.slides) {
+    brands = response.data.slides;
+    commit('setBrands', brands);
+  }
+}
+>>>>>>> 7349c49... initial commit

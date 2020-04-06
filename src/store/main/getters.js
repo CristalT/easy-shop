@@ -26,3 +26,22 @@ export function getSettings(state) {
 export function getHomeCarouselSlides(state) {
   return state.homeCarouselSlides;
 }
+<<<<<<< HEAD
+=======
+
+export function getAboutUs(state) {
+  return state.aboutUs
+}
+
+export function getAdminToken(state) {
+  return state.adminToken
+}
+
+export function getContactData(state) {
+  return state.contactData
+}
+
+export function getBrands(state) {
+  return state.brands
+}
+>>>>>>> 7349c49... initial commit

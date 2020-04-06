@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+=======
+.env
+>>>>>>> 7349c49... initial commit
 .DS_Store
 .thumbs.db
 node_modules
 
 # Quasar core related directories
 .quasar
+<<<<<<< HEAD
 /dist
 
 # Cordova related directories and files
@@ -19,6 +24,23 @@ node_modules
 # BEX related directories and files
 /src-bex/www
 /src-bex/js/core
+=======
+app/dist
+
+# Cordova related directories and files
+app/src-cordova/node_modules
+app/src-cordova/platforms
+app/src-cordova/plugins
+app/src-cordova/www
+
+# Capacitor related directories and files
+app/src-capacitor/www
+app/src-capacitor/node_modules
+
+# BEX related directories and files
+app/src-bex/www
+app/src-bex/js/core
+>>>>>>> 7349c49... initial commit
 
 # Log files
 npm-debug.log*
