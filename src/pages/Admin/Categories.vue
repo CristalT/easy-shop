@@ -43,13 +43,8 @@ export default {
   },
   methods: {
     getAllCategories: async function() {
-<<<<<<< HEAD
-      const request = await this.$axios('category');
-      this.categories = request.data;
-=======
       const response = await this.$axios('category');
       this.categories = Object.values(response.data);
->>>>>>> 7349c49... initial commit
     },
     addCategory() {
       this.$q
