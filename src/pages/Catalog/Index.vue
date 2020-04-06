@@ -13,11 +13,7 @@
     <div class="menu-spacer"></div>
 
     <section :id="cat" class="section" v-for="(cat, index) in categories" :key="index" data-aos="fade-up">
-<<<<<<< HEAD
-      <section-title>{{ cat }}</section-title>
-=======
       <section-title :bg-color="sectionTitleColor">{{ cat }}</section-title>
->>>>>>> 7349c49... initial commit
       <div class="container q-py-xl">
         <div class="row q-col-gutter-md">
           <div class="col-md-3" v-for="(product, index) in productsByCategory(cat)" :key="index">
@@ -28,11 +24,7 @@
                 <div class="text-subtitle2">{{ wordLimit(product.description, 5) }}</div>
               </q-card-section>
               <q-card-section class="text-grey-10 text-center">
-<<<<<<< HEAD
-                <div class="text-h5">{{ product.price | currency }}</div>
-=======
                 <div class="text-h5" v-if="product.priceVisible && product.price > 0">{{ product.price | currency }}</div>
->>>>>>> 7349c49... initial commit
               </q-card-section>
             </q-card>
           </div>

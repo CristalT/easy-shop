@@ -1,35 +1,5 @@
 <template>
   <q-page padding>
-<<<<<<< HEAD
-    <div class="container">
-      <q-card data-aos="fade-up">
-        <q-card-section class="no-padding">
-          <div class="row">
-            <div class="col-6">
-              <q-carousel height="500px" no-padding v-model="slide" swipeable thumbnails infinite animated>
-                <q-carousel-slide
-                  v-for="(img, index) of images"
-                  :key="index"
-                  :name="index"
-                  :img-src="uploadsUrl + img"
-                />
-              </q-carousel>
-            </div>
-            <div class="col-6 q-pa-md">
-              <div class="relative-position full-height" v-if="product">
-                <div class="row q-col-gutter-sm">
-                  <div class="col-12">
-                    <div class="text-h5 text-grey-10">{{ product.name }}</div>
-                    <div class="text-subtitle1 text-grey-9">
-                      {{ product.description }}
-                    </div>
-                    <div class="q-mt-md">
-                      <span class="text-h4">$ {{ product.price }}</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="buy-options">
-=======
     <div class="container flex items-center">
       <q-card data-aos="fade-up" class="full-width">
         <q-card-section class="no-padding">
@@ -59,7 +29,6 @@
                   </div>
                 </div>
                 <div class="buy-options" v-if="settings.salesOn && product.visiblePrice">
->>>>>>> 7349c49... initial commit
                   <q-input type="number" v-model="qty" filled bottom-slots label="Cantidad" stack-label dense>
                     <template v-slot:prepend>
                       <q-icon name="eva-shopping-cart-outline" class="cursor-pointer" />
@@ -80,10 +49,6 @@
 
 <script>
 import { Product } from 'src/mixins/products';
-<<<<<<< HEAD
-export default {
-  mixins: [Product],
-=======
 import { Swiper, SwiperSlide, directive } from 'vue-awesome-swiper';
 import 'swiper/css/swiper.css';
 export default {
@@ -92,14 +57,10 @@ export default {
     Swiper,
     SwiperSlide
   },
->>>>>>> 7349c49... initial commit
   data() {
     return {
       slide: 0,
       qty: 1,
-<<<<<<< HEAD
-      product: null
-=======
       product: null,
       swiperOptions: {
         speed: 400,
@@ -111,7 +72,6 @@ export default {
           prevEl: '.swiper-button-prev'
         }
       }
->>>>>>> 7349c49... initial commit
     };
   },
   methods: {
@@ -137,12 +97,6 @@ export default {
     }
   },
   computed: {
-<<<<<<< HEAD
-    uploadsUrl() {
-      return process.env.UPLOADS_URL;
-    },
-=======
->>>>>>> 7349c49... initial commit
     images() {
       if (this.product) {
         return this.product.images;
@@ -163,11 +117,8 @@ export default {
     position: absolute
     width: 100%
     bottom: 0
-<<<<<<< HEAD
-=======
 .product-details
   @media (max-width: 640px)
     text-align: center
     
->>>>>>> 7349c49... initial commit
 </style>
