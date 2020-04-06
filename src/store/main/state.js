@@ -7,14 +7,10 @@ export default function () {
     },
     homeCarouselSlides: [],
     categories: [],
-<<<<<<< HEAD
-    activeCategories: []
-=======
     activeCategories: [],
     aboutUs: {},
     adminToken: '',
     contactData: [],
     brands: []
->>>>>>> 7349c49... initial commit
   }
 }

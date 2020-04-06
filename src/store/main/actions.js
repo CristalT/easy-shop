@@ -24,8 +24,6 @@ export async function fetchHomeCarouselSlides({ commit }) {
   commit('setHomeCarouselSlides', request.data);
 }
 
-<<<<<<< HEAD
-=======
 /** Get About Us info */
 export async function fetchAboutUs({ commit }) {
   const request = await axiosInstance('about');
@@ -48,4 +46,3 @@ export async function fetchBrands({ commit }) {
     commit('setBrands', brands);
   }
 }
->>>>>>> 7349c49... initial commit
