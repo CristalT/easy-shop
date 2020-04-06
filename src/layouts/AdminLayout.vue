@@ -8,13 +8,8 @@
             <img src="statics/navbar-brand.jpg" id="navbar-brand" />
           </div>
         </q-toolbar-title>
-<<<<<<< HEAD
-        <q-btn @click="viewSite" label="Ver Sitio" flat icon="launch" rounded />
-        <q-btn label="Cerrar Sesión" flat icon="power_settings_new" color="grey-8" rounded />
-=======
         <q-btn @click="viewSite" label="Ver Sitio" flat icon="launch" rounde />
         <q-btn @click="signOut" label="Cerrar Sesión" flat icon="power_settings_new" color="grey-8" rounded />
->>>>>>> 7349c49... initial commit
       </q-toolbar>
     </q-header>
     <q-drawer v-model="drawer" show-if-above :breakpoint="500" bordered content-class="bg-grey-3">
@@ -56,15 +51,12 @@ export default {
           to: 'home-carousel-slides'
         },
         {
-<<<<<<< HEAD
-=======
           icon: 'brand',
           label: 'Marcas',
           to: 'brands-carousel',
           icon: 'toys'
         },
         {
->>>>>>> 7349c49... initial commit
           icon: 'list',
           label: 'Categorías',
           to: 'categories'
@@ -76,8 +68,6 @@ export default {
           separator: true
         },
         {
-<<<<<<< HEAD
-=======
           icon: 'info',
           label: 'Sobre Nosotros',
           to: 'about-us'
@@ -89,7 +79,6 @@ export default {
           separator: true
         },
         {
->>>>>>> 7349c49... initial commit
           icon: 'settings',
           label: 'Configuración',
           to: 'settings'
@@ -99,9 +88,6 @@ export default {
   },
   methods: {
     viewSite() {
-<<<<<<< HEAD
-      window.location = '/'
-=======
       window.location = '/';
     },
     signOut() {
@@ -116,7 +102,6 @@ export default {
       this.$axios.defaults.headers.common = {
         Authorization: 'Bearer ' + adminTokenLocal
       };
->>>>>>> 7349c49... initial commit
     }
   }
 };

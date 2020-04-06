@@ -5,9 +5,6 @@
     </toolbar>
     <q-card class="q-ma-sm no-shadow" bordered>
       <q-card-section>
-<<<<<<< HEAD
-        <q-toggle v-model="product.public" label="Visible al público" />
-=======
         <div class="row">
           <div class="col">
 
@@ -17,7 +14,6 @@
             <q-toggle v-model="product.priceVisible" label="Precio visible" :disabled="!product.public" />
           </div>
         </div>
->>>>>>> 7349c49... initial commit
       </q-card-section>
       <q-separator />
       <q-card-section>
@@ -60,11 +56,7 @@
         </div>
         <div class="col-xs-12 col-sm-3">
           <q-input
-<<<<<<< HEAD
-            type="number"
-=======
             type="text"
->>>>>>> 7349c49... initial commit
             label="Precio"
             v-model="product.price"
             :error="$v.product.price.$error"
@@ -154,10 +146,7 @@ export default {
     return {
       product: {
         public: true,
-<<<<<<< HEAD
-=======
         priceVisible: true,
->>>>>>> 7349c49... initial commit
         name: '',
         code: '',
         description: '',

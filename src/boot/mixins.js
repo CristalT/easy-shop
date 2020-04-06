@@ -37,19 +37,11 @@ const Common = {
       });
     },
     isActive(menuRoute) {
-<<<<<<< HEAD
-      const activeRoute = this.$store.state.main.activeRoute
-      if (menuRoute.route === activeRoute.route && menuRoute.anchor === activeRoute.anchor) {
-        return true
-      }
-      return false
-=======
       const activeRoute = this.$store.state.main.activeRoute;
       if (menuRoute.route === activeRoute.route && menuRoute.anchor === activeRoute.anchor) {
         return true;
       }
       return false;
->>>>>>> 7349c49... initial commit
     },
     upload(file) {
       const formData = new FormData();
@@ -60,10 +52,6 @@ const Common = {
         data: formData,
         headers: {
           'Content-type': 'multipart/form-data'
-<<<<<<< HEAD
-        }
-      }).then(res => res.data.filename)
-=======
         },
         timeout: 15000
       }).then(res => res.data.filename);
@@ -75,7 +63,6 @@ const Common = {
       } catch (err) {
         this.notifyError('Ocurrió un error al obtener los datos de contacto.');
       }
->>>>>>> 7349c49... initial commit
     }
   },
   computed: {
@@ -83,18 +70,6 @@ const Common = {
       return process.env.API_URL + 'upload';
     },
     filesUrl() {
-<<<<<<< HEAD
-      return process.env.UPLOADS_URL
-    },
-    settings() {
-      return this.$store.getters['main/getSettings']
-    }
-  }
-}
-export default async ({ Vue}) => {
-  Vue.mixin(Common)
-}
-=======
       return process.env.UPLOADS_URL;
     },
     settings() {
@@ -133,4 +108,3 @@ export default async ({ Vue}) => {
 export default async ({ Vue }) => {
   Vue.mixin(Common);
 };
->>>>>>> 7349c49... initial commit

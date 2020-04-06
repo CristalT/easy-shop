@@ -1,11 +1,6 @@
 <template>
   <q-layout no-padding view="hHh lpR fFf">
     <q-header class="bg-white text-blue-8" id="main-header">
-<<<<<<< HEAD
-      <menu-toolbar />
-    </q-header>
-
-=======
       <menu-toolbar :menu-options="menuOptions" @showDrawer="drawer = !drawer" />
     </q-header>
 
@@ -22,7 +17,6 @@
       </q-scroll-area>
     </q-drawer>
 
->>>>>>> 7349c49... initial commit
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -39,8 +33,6 @@ export default {
   components: {
     MenuToolbar,
     MainFooter
-<<<<<<< HEAD
-=======
   },
   data() {
     return {
@@ -74,7 +66,6 @@ export default {
         }
       ];
     }, 1000);
->>>>>>> 7349c49... initial commit
   }
 };
 </script>

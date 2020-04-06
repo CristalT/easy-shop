@@ -11,32 +11,18 @@
         <q-input type="textarea" v-model="contact.message" label="Mensaje" outlined />
       </div>
       <div class="col-12 text-center">
-<<<<<<< HEAD
-          <q-btn label="Enviar" color="primary" icon="eva-email-outline" unelevated />
-=======
         <q-btn label="Enviar" color="primary" icon="eva-email-outline" unelevated @click="sendMessage" />
->>>>>>> 7349c49... initial commit
       </div>
     </div>
   </form>
 </template>
 
 <script>
-<<<<<<< HEAD
-=======
 import { required, email } from 'vuelidate/lib/validators';
->>>>>>> 7349c49... initial commit
 export default {
   data() {
     return {
       contact: {
-<<<<<<< HEAD
-        name: "",
-        email: "",
-        message: ""
-      }
-    };
-=======
         name: '',
         email: '',
         message: ''
@@ -72,7 +58,6 @@ export default {
           this.notifyError('Ocurrió un error al enviar tu mensaje.');
         });
     }
->>>>>>> 7349c49... initial commit
   }
 };
 </script>

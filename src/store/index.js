@@ -2,10 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 
 import main from './main'
-<<<<<<< HEAD
-=======
 import template from './template'
->>>>>>> 7349c49... initial commit
 
 Vue.use(Vuex)
 
@@ -21,12 +18,8 @@ Vue.use(Vuex)
 export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
-<<<<<<< HEAD
-      main
-=======
       main,
       template
->>>>>>> 7349c49... initial commit
     },
 
     // enable strict mode (adds overhead!)

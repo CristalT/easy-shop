@@ -6,29 +6,6 @@
     <div class="q-pa-md">
       <q-card>
         <q-card-section>
-<<<<<<< HEAD
-          <div class="sutil-title">Catálogo</div>
-          <q-toggle v-model="Settings.catalogOn" label="Catálogo habilitado" />
-        </q-card-section>
-        <q-card-section>
-          <div class="sutil-title">Medios de Pago Habilitados</div>
-          <div v-for="(method, index) of Settings.paymentMethods" :key="index">
-            <q-checkbox v-model="method.value" :label="method.label" />
-          </div>
-        </q-card-section>
-        <q-card-section>
-          <div class="sutil-title">Credenciales MercadoPago</div>
-          <q-input
-            :disabled="!hasMpEnabled"
-            :readonly="!hasMpEnabled"
-            class="q-mx-sm"
-            type="text"
-            v-model="Settings.mercadoPagoCredentials.publicKey"
-            label="Public Key"
-            :error="$v.Settings.mercadoPagoCredentials.publicKey.$error"
-            @blur="$v.Settings.mercadoPagoCredentials.publicKey.$touch"
-          />
-=======
           <div class="sutil-title filled semi-rounded">Catálogo</div>
           <div class="row">
             <div class="col">
@@ -118,7 +95,6 @@
               </div>
             </div>
           </fieldset>
->>>>>>> 7349c49... initial commit
         </q-card-section>
       </q-card>
     </div>
@@ -126,11 +102,7 @@
 </template>
 <script>
 import Toolbar from 'src/components/Toolbar';
-<<<<<<< HEAD
-import { requiredIf } from 'vuelidate/lib/validators';
-=======
 import { requiredIf, email } from 'vuelidate/lib/validators';
->>>>>>> 7349c49... initial commit
 export default {
   name: 'SettingsPage',
   components: {
@@ -141,10 +113,7 @@ export default {
       Settings: {
         _id: 'settings',
         catalogOn: true,
-<<<<<<< HEAD
-=======
         salesOn: false,
->>>>>>> 7349c49... initial commit
         paymentMethods: [
           {
             label: 'MercadoPago',
@@ -156,9 +125,6 @@ export default {
           }
         ],
         mercadoPagoCredentials: {
-<<<<<<< HEAD
-          publicKey: ''
-=======
           publicKey: '',
           accessToken: ''
         },
@@ -175,7 +141,6 @@ export default {
         contactForm: {
           enabled: false,
           emailTo: ''
->>>>>>> 7349c49... initial commit
         }
       }
     };
@@ -187,8 +152,6 @@ export default {
           required: requiredIf(function() {
             return this.hasMpEnabled;
           })
-<<<<<<< HEAD
-=======
         },
         accessToken: {
           required: requiredIf(function() {
@@ -202,7 +165,6 @@ export default {
             return this.hasContactFormEnabled;
           }),
           email
->>>>>>> 7349c49... initial commit
         }
       }
     }
@@ -224,11 +186,6 @@ export default {
       if (this.$v.Settings.$invalid) {
         return;
       }
-<<<<<<< HEAD
-      
-=======
-
->>>>>>> 7349c49... initial commit
       this.$axios
         .post('settings', this.Settings)
         .then(() => {
@@ -243,12 +200,9 @@ export default {
   computed: {
     hasMpEnabled() {
       return this.Settings.paymentMethods.find(pm => pm.label === 'MercadoPago').value;
-<<<<<<< HEAD
-=======
     },
     hasContactFormEnabled() {
       return this.Settings.contactForm.enabled;
->>>>>>> 7349c49... initial commit
     }
   },
   created() {
