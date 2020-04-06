@@ -50,23 +50,15 @@ module.exports = function(ctx) {
     },
     supportIE: false,
     build: {
-<<<<<<< HEAD
-      vueRouterMode: 'history', // available values: 'hash', 'history'
-=======
       vueRouterMode: 'hash', // available values: 'hash', 'history'
->>>>>>> 7349c49... initial commit
       env: ctx.dev
         ? {
             API_URL: JSON.stringify('http://localhost:8000/api/'),
             UPLOADS_URL: JSON.stringify('http://localhost:8000/files/')
           }
         : {
-<<<<<<< HEAD
-            API_URL: JSON.stringify('http://localhost:8000/api/')
-=======
             API_URL: JSON.stringify('http://66.97.35.149:8000/api/'),
             UPLOADS_URL: JSON.stringify('http://66.97.35.149:8000/files/')
->>>>>>> 7349c49... initial commit
           },
 
       // rtl: false, // https://quasar.dev/options/rtl-support
@@ -84,11 +76,7 @@ module.exports = function(ctx) {
     devServer: {
       https: false,
       port: 8080,
-<<<<<<< HEAD
-      open: true // opens browser window automatically
-=======
       open: false // opens browser window automatically
->>>>>>> 7349c49... initial commit
     },
     animations: [],
     ssr: {
